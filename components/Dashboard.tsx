@@ -1,7 +1,13 @@
 import React from 'react';
 import ProductList from './ProductList';
+import type { Product } from '../types';
 
-const Dashboard: React.FC = () => {
+interface DashboardProps {
+  products: Product[];
+  onManageProduct: (product: Product) => void;
+}
+
+const Dashboard: React.FC<DashboardProps> = ({ products, onManageProduct }) => {
     return (
         <div className="mt-12">
             <div className="text-center mb-12">
@@ -10,7 +16,7 @@ const Dashboard: React.FC = () => {
                    Activate Magic Cart for your products below. Once enabled, you can manage upsells, funnels, and automations that will be deployed directly to your product on Whop.
                 </p>
             </div>
-            <ProductList />
+            <ProductList products={products} onManageProduct={onManageProduct} />
         </div>
     );
 };

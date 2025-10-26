@@ -3,9 +3,10 @@ import type { Product } from '../types';
 
 interface ProductCardProps {
     product: Product;
+    onManageProduct: (product: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onManageProduct }) => {
     const [isEnabled, setIsEnabled] = useState(false);
 
     const handleToggle = () => {
@@ -39,7 +40,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
              {isEnabled && (
                 <div className="mt-4 border-t border-gray-700 pt-4">
-                     <button className="w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition-colors text-sm">
+                     <button 
+                        onClick={() => onManageProduct(product)}
+                        className="w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition-colors text-sm"
+                     >
                         Manage Funnels
                     </button>
                 </div>

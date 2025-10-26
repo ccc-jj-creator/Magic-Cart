@@ -1,6 +1,6 @@
 import React from 'react';
 import IntegrationCard from './IntegrationCard';
-import { WhopIcon, DiscordIcon, ZapierIcon, RetellAIIcon } from './icons';
+import { WhopIcon, DiscordIcon, ZapierIcon } from './icons';
 
 const integrations = [
     {
@@ -19,11 +19,6 @@ const integrations = [
         description: 'Link Magic Cart to thousands of other apps and automate workflows between them with Zapier.',
         icon: <ZapierIcon />,
     },
-    {
-        name: 'Retell AI',
-        description: 'For advanced, low-latency voice conversations, connect your own Retell AI account. You carry the cost, we provide the integration.',
-        icon: <RetellAIIcon />,
-    }
 ];
 
 const Integrations: React.FC = () => {
